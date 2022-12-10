@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.reflectapply">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WGUSchedulingApp">
+        <receiver
+            android:name="com.example.reflectapply.UI.MyReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity
+            android:name="com.example.reflectapply.UI.AddCourse"
+            android:exported="false"
+            android:label="Add Course" />
+        <activity
+            android:name="com.example.reflectapply.UI.AddAssessment"
+            android:exported="false"
+            android:label="Add Assessment" />
+        <activity
+            android:name="com.example.reflectapply.UI.ViewAssessment"
+            android:exported="false"
+            android:label="Assessment Detail"
+            android:parentActivityName="com.example.reflectapply.UI.PassagesList" />
+        <activity
+            android:name="com.example.reflectapply.UI.CourseList"
+            android:exported="false"
+            android:label="Courses" />
+        <activity
+            android:name="com.example.reflectapply.UI.AssessmentsList"
+            android:exported="false"
+            android:label="Assessments" />
+        <activity
+            android:name="com.example.reflectapply.UI.ViewPassage"
+            android:exported="false"
+            android:label="New Reflection"
+            android:parentActivityName="com.example.reflectapply.UI.PassagesList" />
+        <activity
+            android:name="com.example.reflectapply.UI.ViewCourse"
+            android:exported="false"
+            android:label="View Course"
+            android:parentActivityName="com.example.reflectapply.UI.PassagesList" />
+        <activity
+            android:name="com.example.reflectapply.UI.AddTerm"
+            android:exported="false"
+            android:label="Add Term"
+            android:parentActivityName="com.example.reflectapply.UI.PassagesList" />
+        <activity
+            android:name="com.example.reflectapply.UI.PassagesList"
+            android:exported="false"
+            android:label="Past Reflections"
+            android:parentActivityName="com.example.reflectapply.UI.MainActivity" />
+        <activity
+            android:name="com.example.reflectapply.UI.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

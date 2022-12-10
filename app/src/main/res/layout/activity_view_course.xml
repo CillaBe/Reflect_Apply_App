@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.ViewCourse">
+
+
+    <ScrollView
+        android:id="@+id/scrollViewCourse"
+        android:layout_width="386dp"
+        android:layout_height="356dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/CourseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Course Name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <EditText
+                android:id="@+id/editCourseName"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Fall 2020"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/CourseStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/editCourseStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="09/01/2022"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/tEndCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="End" />
+
+            <EditText
+                android:id="@+id/editCourseEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="12/01/2022"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/tCourseID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CourseID" />
+
+            <EditText
+                android:id="@+id/editCourseID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="3"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/tTermID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TermID" />
+
+            <EditText
+                android:id="@+id/editTermID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="3"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/InstructorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instructor Name" />
+
+            <EditText
+                android:id="@+id/editInstructorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="John Smith"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/InstructorPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instructor Phone" />
+
+            <EditText
+                android:id="@+id/editInstructorPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="585-455-3884"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/InstructorEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instructor Email" />
+
+            <EditText
+                android:id="@+id/editInstructorEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="bob@aol.com"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Course Status" />
+
+            <EditText
+                android:id="@+id/editCourseStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Completed"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/OptionalNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Optional Notes" />
+
+            <EditText
+                android:id="@+id/editOptionalNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="3 credit hours"
+                android:minHeight="48dp"></EditText>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assessments"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toTopOf="@+id/AssessmentRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewCourse"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/AssessmentRecyclerView"
+        android:layout_width="381dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="52dp"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewCourse" />
+
+    <Button
+        android:id="@+id/addAssessmentButton"
+        android:layout_width="145dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+
+        android:onClick="addAssessment"
+        android:text="Add Assessment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteCourseButton"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AssessmentRecyclerView"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <Button
+        android:id="@+id/SaveCourseButton"
+        android:layout_width="104dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="saveCourse"
+        android:text="Save Course"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/deleteCourseButton"
+        app:layout_constraintTop_toBottomOf="@+id/AssessmentRecyclerView"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <Button
+        android:id="@+id/deleteCourseButton"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:onClick="DeleteCourse"
+        android:text="Delete Course"
+        app:layout_constraintStart_toEndOf="@+id/addAssessmentButton"
+        app:layout_constraintEnd_toStartOf="@id/SaveCourseButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AssessmentRecyclerView"
+        app:layout_constraintVertical_bias="0.23"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

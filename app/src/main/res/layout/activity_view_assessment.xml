@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.ViewAssessment">
+
+    <ScrollView
+        android:id="@+id/scrollViewCourse"
+        android:layout_width="396dp"
+        android:layout_height="499dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/AssessmentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Assessment Name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <EditText
+                android:id="@+id/editAssessmentName"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="History Assessment"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/AssessmentType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Assessment Type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/editAssessmentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Objective Assessment"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/AssessmentStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Assessment Start" />
+
+            <EditText
+                android:id="@+id/editAssessmentStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="12/01/2022"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/AssessmentEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Assessment End" />
+
+            <EditText
+                android:id="@+id/editAssessmentEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="12/5/2022"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/CourseID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Course ID" />
+
+            <EditText
+                android:id="@+id/editCourseIdInAssessment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/SaveAssessmentButton"
+        android:layout_width="141dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="128dp"
+        android:onClick="saveAssessment"
+        android:text="Save Assessment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/deleteAssessmentButton"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewCourse"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/deleteAssessmentButton"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="36dp"
+
+        android:layout_marginTop="128dp"
+        android:text="Delete Assessment"
+        android:onClick="DeleteAssessment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewCourse"
+        app:layout_constraintVertical_bias="0.166" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
