@@ -10,6 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="25dp"
         android:layout_marginEnd="1dp"
+        android:textSize="15dp"
 
 
         android:text="TextView"
@@ -20,13 +21,14 @@
 
     <TextView
         android:id="@+id/StartofDateWords"
+        android:textSize="15dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="2dp"
-        android:text="Date"
+        android:text="Date:"
         app:fontFamily="@font/julius_sans_one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/PassageDate"
@@ -37,23 +39,25 @@
         android:id="@+id/PassageDate"
         android:layout_width="0dp"
         android:layout_height="25dp"
-
         android:layout_marginEnd="30dp"
+
         android:text="TextView"
+        android:textSize="15dp"
         app:fontFamily="@font/alegreya_sans_sc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/PassageLabel"
         app:layout_constraintStart_toEndOf="@+id/StartofDateWords"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/PassageLabel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="7dp"
-        android:text="Passage"
+        android:text="Passage:"
 
+        android:textSize="15dp"
         app:fontFamily="@font/alegreya_sans_sc_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/PassageName"

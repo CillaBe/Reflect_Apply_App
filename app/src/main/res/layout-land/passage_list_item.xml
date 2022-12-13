@@ -7,70 +7,60 @@
 
     <TextView
         android:id="@+id/PassageName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="1dp"
-        android:layout_marginTop="25dp"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="1dp"
+        android:textSize="15dp"
+
+
         android:text="TextView"
-        app:fontFamily="@font/alfa_slab_one"
-        app:layout_constraintEnd_toStartOf="@id/StartofDateWords"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toRightOf="parent"
+        app:fontFamily="@font/alegreya_sans_sc"
+        app:layout_constraintBaseline_toBaselineOf="@+id/PassageLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PassageLabel" />
+
+    <TextView
+        android:id="@+id/StartofDateWords"
+        android:textSize="15dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="2dp"
+        android:text="Date:"
+        app:fontFamily="@font/julius_sans_one"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PassageDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/StartofDateWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="1dp"
-        android:layout_marginTop="25dp"
-        android:text="Start"
-        app:fontFamily="@font/alegreya_sc_bold_italic"
-        app:layout_constraintEnd_toStartOf="@id/PassageDate"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/PassageName"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/TermEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="1dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/EndofTermWords"
-
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/PassageDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="1dp"
-        android:layout_marginTop="25dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@id/EndofTermWords"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/StartofDateWords"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="30dp"
 
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="TextView"
+        android:textSize="15dp"
+        app:fontFamily="@font/alegreya_sans_sc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PassageLabel"
+        app:layout_constraintStart_toEndOf="@+id/StartofDateWords"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/EndofTermWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="1dp"
-        android:layout_marginTop="25dp"
-        android:text="End"
-        app:fontFamily="@font/alegreya_sc_bold_italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/TermEnd"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:id="@+id/PassageLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="7dp"
+        android:text="Passage:"
+
+        android:textSize="15dp"
+        app:fontFamily="@font/alegreya_sans_sc_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PassageName"
         app:layout_constraintStart_toEndOf="@+id/PassageDate"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -6,35 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".UI.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Welcome"
-        android:textSize="32sp"
-        app:fontFamily="@font/aleo_bold"
+
+    <ImageView
+        android:id="@+id/MountainView"
+        android:layout_width="854dp"
+        android:layout_height="1028dp"
+        android:contentDescription="Photo of mountain top"
+        android:src="@drawable/mountain"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/WelcomeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="enterTermsList"
-        android:text="@string/Terms"
+        android:layout_width="171dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="56dp"
+        android:onClick="enterPassagesList"
+        android:text="Log In"
         android:textColor="#000000"
-        app:backgroundTint="@color/teal_700"
-        app:icon="?attr/actionModePasteDrawable"
+        app:backgroundTint="#FDFDFD"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="186dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/WelcomeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/reflectapplylogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".UI.ViewPassage">
 
+
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="355dp"
-        android:layout_height="270dp"
+        android:layout_width="386dp"
+        android:layout_height="658dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -75,68 +76,126 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="19dp"
+                android:layout_height="43dp"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/tCourseID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Write a short reflection on this passage:" />
+
+            <EditText
+                android:id="@+id/editCourseID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="3"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/tTermID"
                 android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:text="Reflections" />
+                android:layout_height="wrap_content"
+                android:text="How will you apply this in your daily life?" />
+
+            <EditText
+                android:id="@+id/editTermID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="3"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/InstructorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is your prayer for today?" />
+
+            <EditText
+                android:id="@+id/editInstructorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="John Smith"
+                android:minHeight="48dp"></EditText>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/InstructorPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What's your one word take away?" />
+
+            <EditText
+                android:id="@+id/editInstructorPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="585-455-3884"
+                android:minHeight="48dp"></EditText>
 
 
         </LinearLayout>
     </ScrollView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="351dp"
-        android:layout_height="255dp"
-        android:layout_marginTop="8dp"
-        android:scrollbars="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
-
     <Button
         android:id="@+id/addCourseButton"
-        android:layout_width="120dp"
-        android:layout_height="58dp"
+        android:layout_width="42dp"
+        android:layout_height="59dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:onClick="goToCourseDetails"
         android:text="Add Course"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="117dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="27dp"
+        android:layout_width="132dp"
+        android:layout_height="54dp"
 
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:onClick="saveTerm"
-        android:text="Save Term"
+        android:text="Save Reflection"
+        app:backgroundTint="@color/AltBlue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/deleteTermButton"
-        android:layout_width="106dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="24dp"
-        android:text="Delete Term"
+        android:layout_width="126dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="8dp"
         android:onClick="DeleteTerm"
+        android:text="Delete Reflection"
+        app:backgroundTint="@color/AltBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/addCourseButton"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toEndOf="@+id/addCourseButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
