@@ -8,6 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.reflectapply.Entity.Passage;
+import com.example.reflectapply.Entity.Reflection;
 
 import java.util.List;
 
@@ -25,5 +26,8 @@ public interface PassageDAO {
 
     @Query("SELECT * FROM PASSAGETABLE ORDER BY PassageID ASC")
     List<Passage> getAllPassages();
+
+
+
 }
 

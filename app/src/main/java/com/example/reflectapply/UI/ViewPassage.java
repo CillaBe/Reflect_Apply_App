@@ -4,24 +4,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.reflectapply.Database.Repository;
-import com.example.reflectapply.Entity.Course;
+import com.example.reflectapply.Entity.Reflection;
 import com.example.reflectapply.Entity.Passage;
 import com.example.reflectapply.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ViewPassage extends AppCompatActivity {
 
     EditText PassageName;
-    EditText PassageDate;
+    EditText editPassageDate;
 
 
     String name;
@@ -31,6 +38,23 @@ public class ViewPassage extends AppCompatActivity {
     Repository repository;
 
 
+
+
+    String PassageDate;
+
+
+    Repository repo;
+
+    String DateFormatter = "MM/dd/yy";
+    SimpleDateFormat SimpleFormat = new SimpleDateFormat(DateFormatter, Locale.US);
+
+
+    final Calendar myCalenderBegin = Calendar.getInstance();
+
+
+    DatePickerDialog.OnDateSetListener startDate;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +62,11 @@ public class ViewPassage extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_view_passage);
 
-        final CourseAdapter adapter = new CourseAdapter(this);
+        final ReflectionAdapter adapter = new ReflectionAdapter(this);
 
 
         repository = new Repository(getApplication());
-        PassageDate = findViewById(R.id.editPassageDate);
+        editPassageDate = findViewById(R.id.editPassageDate);
         PassageName =findViewById(R.id.editPassageName);
 
         name = getIntent().getStringExtra("name");
@@ -51,20 +75,55 @@ public class ViewPassage extends AppCompatActivity {
         passageID = getIntent().getIntExtra("id",-1);
 
         PassageName.setText(name);
-        PassageDate.setText(date);
+        editPassageDate.setText(date);
 
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        List<Course> CoursesByTerm = new ArrayList<>();
-        for (Course course : repository.getAllCourses()){
-            if (course.getTermID() == passageID) {
+        List<Reflection> CoursesByTerm = new ArrayList<>();
+        for (Reflection course : repository.getAllReflections()){
+            if (course.getPassageID() == passageID) {
                 CoursesByTerm.add(course);
             }
-            adapter.setCourse(CoursesByTerm);
+            adapter.setReflections(CoursesByTerm);
 
         }
+
+
+
+        editPassageDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Date date;
+                String dateinformation = editPassageDate.getText().toString();
+                if (dateinformation.equals("")) dateinformation = "11/11/2011";
+                try {
+                    myCalenderBegin.setTime(SimpleFormat.parse(dateinformation));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+
+                }
+
+                new DatePickerDialog(ViewPassage.this, startDate, myCalenderBegin.get(Calendar.YEAR), myCalenderBegin.get(Calendar.MONTH), myCalenderBegin.get(Calendar.DAY_OF_MONTH)).show();
+
+
+            }
+        });
+
+        startDate = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                myCalenderBegin.set(Calendar.YEAR, year);
+                myCalenderBegin.set(Calendar.MONTH, month);
+                myCalenderBegin.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabelStart();
+
+            }
+
+        };
+
 
 
 
@@ -73,7 +132,10 @@ public class ViewPassage extends AppCompatActivity {
 
 
     }
-    public void saveTerm(View view){
+    private void updateLabelStart() {
+        editPassageDate.setText(SimpleFormat.format(myCalenderBegin.getTime()));
+    }
+    public void savePassage(View view){
         Passage passage;
         if (passageID == -1) {
             int newID = (int)Math.random();
@@ -83,26 +145,26 @@ public class ViewPassage extends AppCompatActivity {
                     newID = (int)Math.random();
                 }
             }
-            passage = new Passage(newID, PassageName.getText().toString(),PassageDate.getText().toString());
+            passage = new Passage(newID, PassageName.getText().toString(), editPassageDate.getText().toString());
             repository.insert(passage);
             Intent newIntent = new Intent(ViewPassage.this, PassagesList.class);
             startActivity(newIntent);
         } else {
-            passage = new Passage(passageID,  PassageName.getText().toString(),PassageDate.getText().toString());
+            passage = new Passage(passageID,  PassageName.getText().toString(), editPassageDate.getText().toString());
             repository.update(passage);
             Intent newIntent = new Intent(ViewPassage.this, PassagesList.class);
             startActivity(newIntent);
         }
     }
-    public void goToCourseDetails(View view){
-        Intent intent = new Intent(ViewPassage.this,ViewCourse.class);
+    public void GoToReflections(View view){
+        Intent intent = new Intent(ViewPassage.this, ViewReflection.class);
         startActivity(intent);
     }
 
-    public void DeleteTerm(View view) {
+    public void DeletePassage(View view) {
         int numberOfCourses = 0;
-        for (Course course : repository.getAllCourses()){
-            if (course.getTermID() == passageID ){
+        for (Reflection course : repository.getAllReflections()){
+            if (course.getPassageID() == passageID ){
                 ++numberOfCourses;}
 
 

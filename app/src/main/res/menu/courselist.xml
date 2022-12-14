@@ -5,13 +5,6 @@
     <item
         android:id="@+id/ShareNotes"
         android:orderInCategory="100"
-        android:title="Share Notes" />
-    <item
-        android:id="@+id/NotifStartOfCourse"
-        android:orderInCategory="100"
-        android:title="Notify Start of Course" />
-    <item
-        android:id="@+id/NotifEndOfCourse"
-        android:orderInCategory="100"
-        android:title="Notify End of Course" />
+        android:title="Share Reflection Summary" />
+
 </menu>

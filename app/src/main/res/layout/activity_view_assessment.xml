@@ -7,7 +7,7 @@
     tools:context=".UI.ViewAssessment">
 
     <ScrollView
-        android:id="@+id/scrollViewCourse"
+        android:id="@+id/scrollViewReflection"
         android:layout_width="396dp"
         android:layout_height="499dp"
         android:layout_marginTop="16dp"
@@ -112,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/deleteAssessmentButton"
-        app:layout_constraintTop_toBottomOf="@+id/scrollViewCourse"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewReflection"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -126,7 +126,7 @@
         android:onClick="DeleteAssessment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollViewCourse"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewReflection"
         app:layout_constraintVertical_bias="0.166" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

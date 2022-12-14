@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.reflectapply.Database.Repository;
 import com.example.reflectapply.Entity.Passage;
+import com.example.reflectapply.Entity.Reflection;
 import com.example.reflectapply.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Repository repo = new Repository(getApplication());
         Passage NewPassage = new Passage(1,"Psalm 103","12/2/222");
         repo.insert(NewPassage);
+
+
+        Reflection newReflection = new Reflection(1,1 ,"Testing reflection","Testing Application","Testing Prayer","Testing One Word");
+        repo.insert(newReflection);
 
         /**Term FallTerm = new Term(1,"Fall Term","09/30/2022","12/15/2022");
         repo.insert(FallTerm);

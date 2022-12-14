@@ -10,7 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.reflectapply.Database.Repository;
 import com.example.reflectapply.Entity.Passage;
+import com.example.reflectapply.Entity.Reflection;
 import com.example.reflectapply.R;
 
 import java.util.List;
@@ -19,6 +21,7 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
     class PassageViewHolder extends RecyclerView.ViewHolder{
         private final TextView passageNameItemView;
         private final TextView DateItemView;
+        Repository repo;
 
         private PassageViewHolder(View itemView){
             super (itemView);
@@ -35,6 +38,9 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
                     intent.putExtra("id",current.getPassageID());
                     intent.putExtra("name",current.getPassageName());
                     intent.putExtra("date",current.getPassageDate());
+                    int PassageID = current.getPassageID();
+
+
 
                     context.startActivity(intent);
 
@@ -44,6 +50,8 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
         }
     }
     private List<Passage> mPassages;
+    private List<Reflection> mAllReflectionsByID;
+
     private final Context context;
     private final LayoutInflater mInflater;
     public PassageAdapter(Context context){

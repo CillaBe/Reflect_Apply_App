@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.ViewReflection">
+
+
+    <ScrollView
+        android:id="@+id/scrollViewReflection"
+        android:layout_width="405dp"
+        android:layout_height="578dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/reflectionSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Write a short reflection on this passage:" />
+            </TableRow>
+
+            <EditText
+                android:id="@+id/editReflectionSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="3"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/Application"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How will you apply this in your daily life?" />
+
+            <EditText
+                android:id="@+id/editApplication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="3"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/Prayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is your prayer for today?" />
+
+            <EditText
+                android:id="@+id/editPrayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="John Smith"
+                android:minHeight="48dp"></EditText>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/OneWordTakeAway"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What's your one word take away?" />
+
+            <EditText
+                android:id="@+id/editOneWordTakeAway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="585-455-3884"
+                android:minHeight="48dp"></EditText>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/SaveReflectionButton"
+        android:layout_width="138dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="saveReflection"
+
+        android:text="Save Reflection"
+        app:backgroundTint="@color/AltBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewReflection" />
+
+    <Button
+        android:id="@+id/deleteReflectionButton"
+        android:layout_width="156dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="36dp"
+        android:onClick="DeleteReflection"
+
+        android:text="Delete Reflection"
+        app:backgroundTint="@color/AltBlue"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/SaveReflectionButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

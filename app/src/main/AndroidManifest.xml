@@ -41,9 +41,9 @@
             android:label="New Reflection"
             android:parentActivityName="com.example.reflectapply.UI.PassagesList" />
         <activity
-            android:name="com.example.reflectapply.UI.ViewCourse"
+            android:name="com.example.reflectapply.UI.ViewReflection"
             android:exported="false"
-            android:label="View Course"
+            android:label="View Reflection"
             android:parentActivityName="com.example.reflectapply.UI.PassagesList" />
         <activity
             android:name="com.example.reflectapply.UI.AddTerm"

@@ -16,7 +16,7 @@
       android:layout_marginRight="44dp"
       android:layout_marginBottom="4dp"
       android:clickable="true"
-      android:onClick="goToAddTerm"
+      android:onClick="goToReflectionDetail"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/termrecyclerview"

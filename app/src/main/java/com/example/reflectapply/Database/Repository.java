@@ -3,10 +3,10 @@ package com.example.reflectapply.Database;
 import android.app.Application;
 
 import com.example.reflectapply.DAO.AssessmentDAO;
-import com.example.reflectapply.DAO.CourseDAO;
+import com.example.reflectapply.DAO.ReflectionDAO;
 import com.example.reflectapply.DAO.PassageDAO;
 import com.example.reflectapply.Entity.Assessment;
-import com.example.reflectapply.Entity.Course;
+import com.example.reflectapply.Entity.Reflection;
 import com.example.reflectapply.Entity.Passage;
 
 import java.util.List;
@@ -15,10 +15,11 @@ import java.util.concurrent.Executors;
 
 public class Repository {
     private AssessmentDAO mAssessmentDAO;
-    private CourseDAO mCourseDAO;
+    private ReflectionDAO mReflectionDAO;
     private PassageDAO mPassageDAO;
     private List<Assessment> mAllAssessments;
-    private List<Course> mAllCourses;
+    private List<Reflection> mAllReflections;
+    private List<Reflection> mAllReflectionsByID;
     private List<Passage> mAllPassages;
 
     private static int NUMBER_OF_THREADS=4;
@@ -29,7 +30,7 @@ public class Repository {
     public Repository(Application application){
         DatabaseBuilder db=DatabaseBuilder.getDatabase(application);
         mPassageDAO=db.passageDAO();
-        mCourseDAO=db.courseDAO();
+        mReflectionDAO =db.reflectionDAO();
         mAssessmentDAO=db.assessmentDAO();
     }
 
@@ -57,10 +58,10 @@ public class Repository {
                 e.printStackTrace();
             }
         }
-    public void insert(Course course){
+    public void insert(Reflection course){
 
         databaseExecutor.execute(()->{
-            mCourseDAO.insert(course);
+            mReflectionDAO.insert(course);
         });
         try{
             Thread.sleep(1000);
@@ -81,10 +82,9 @@ public class Repository {
         }
         return mAllAssessments;
     }
-
-    public List<Course>getAllCourses(){
+    public List<Reflection>getAllReflectionByPassageID(int passageID){
         databaseExecutor.execute(()->{
-            mAllCourses=mCourseDAO.getAllCourses();
+            mAllReflectionsByID= mReflectionDAO.getReflectionsByPassageID(passageID);
         });
 
         try {
@@ -92,7 +92,20 @@ public class Repository {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return mAllCourses;
+        return mAllReflectionsByID;
+    }
+
+    public List<Reflection>getAllReflections(){
+        databaseExecutor.execute(()->{
+            mAllReflections= mReflectionDAO.getAllReflections();
+        });
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return mAllReflections;
     }
 
     public List<Passage>getAllPassages(){
@@ -118,9 +131,9 @@ public class Repository {
             e.printStackTrace();
         }
     }
-    public void update(Course course){
+    public void update(Reflection course){
         databaseExecutor.execute(()->{
-            mCourseDAO.update(course);
+            mReflectionDAO.update(course);
         });
         try {
             Thread.sleep(1000);
@@ -151,9 +164,9 @@ public class Repository {
         }
     }
 
-    public void delete(Course course){
+    public void delete(Reflection course){
         databaseExecutor.execute(()->{
-            mCourseDAO.delete(course);
+            mReflectionDAO.delete(course);
         });
         try {
             Thread.sleep(1000);

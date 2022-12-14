@@ -45,7 +45,7 @@ public class PassagesList extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
 
-    public void goToAddTerm(View view) {
+    public void goToReflectionDetail(View view) {
         Intent intent = new Intent(PassagesList.this, ViewPassage.class);
         startActivity(intent);
     }

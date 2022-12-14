@@ -19,7 +19,7 @@
       android:clickable="true"
       android:minWidth="48dp"
       android:minHeight="48dp"
-      android:onClick="goToAddTerm"
+      android:onClick="goToReflectionDetail"
       android:text="New Reflection"
       app:backgroundTint="@color/AltBlue"
       app:fontFamily="@font/alegreya_sans_sc"
