@@ -36,14 +36,10 @@ public class ViewPassage extends AppCompatActivity {
 
     int passageID;
     Repository repository;
-
-
-
-
     String PassageDate;
 
 
-    Repository repo;
+
 
     String DateFormatter = "MM/dd/yy";
     SimpleDateFormat SimpleFormat = new SimpleDateFormat(DateFormatter, Locale.US);
@@ -62,7 +58,7 @@ public class ViewPassage extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_view_passage);
 
-        final ReflectionAdapter adapter = new ReflectionAdapter(this);
+
 
 
         repository = new Repository(getApplication());
@@ -78,17 +74,7 @@ public class ViewPassage extends AppCompatActivity {
         editPassageDate.setText(date);
 
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        List<Reflection> CoursesByTerm = new ArrayList<>();
-        for (Reflection course : repository.getAllReflections()){
-            if (course.getPassageID() == passageID) {
-                CoursesByTerm.add(course);
-            }
-            adapter.setReflections(CoursesByTerm);
 
-        }
 
 
 

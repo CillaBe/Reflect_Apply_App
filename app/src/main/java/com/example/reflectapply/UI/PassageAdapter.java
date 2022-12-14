@@ -38,7 +38,7 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
                     intent.putExtra("id",current.getPassageID());
                     intent.putExtra("name",current.getPassageName());
                     intent.putExtra("date",current.getPassageDate());
-                    int PassageID = current.getPassageID();
+
 
 
 
@@ -50,7 +50,7 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
         }
     }
     private List<Passage> mPassages;
-    private List<Reflection> mAllReflectionsByID;
+
 
     private final Context context;
     private final LayoutInflater mInflater;
