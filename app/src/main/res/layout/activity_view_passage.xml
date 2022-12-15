@@ -76,35 +76,97 @@
                 android:hint="09/01/2022"
                 android:minHeight="48dp"></EditText>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1" />
+
+            <TextView
+                    android:id="@+id/reflectionSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Write a short reflection on this passage:" />
+
+            <EditText
+                android:id="@+id/editReflectionSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter reflection here"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+            <TextView
+                android:id="@+id/Application"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How will you apply this in your daily life?" />
+
+            <EditText
+                android:id="@+id/editApplication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter application here"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+            <TextView
+                android:id="@+id/Prayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is your prayer for today?" />
+
+            <EditText
+                android:id="@+id/editPrayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter prayer here"
+                android:minHeight="48dp"></EditText>
+            <TextView
+                android:id="@+id/OneWordTakeAway"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What's your one word take away?" />
+
+            <EditText
+                android:id="@+id/editOneWordTakeAway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter one word takaway here"
+                android:minHeight="48dp"></EditText>
+
+
+
 
         </LinearLayout>
     </ScrollView>
 
 
     <Button
-        android:id="@+id/SavePassageButton"
+        android:id="@+id/SaveReflectionButton"
         android:layout_width="132dp"
         android:layout_height="54dp"
 
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:onClick="savePassage"
-        android:text="Save Passage"
+        android:text="Save Reflection"
         app:backgroundTint="@color/AltBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/deletePassageButton"
+        android:id="@+id/deleteReflectionButton"
         android:layout_width="126dp"
         android:layout_height="53dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="8dp"
         android:onClick="DeletePassage"
-        android:text="Delete Passage"
+        android:text="Delete Reflection"
         app:backgroundTint="@color/AltBlue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/SavePassageButton" />
+        app:layout_constraintEnd_toStartOf="@+id/SaveReflectionButton" />
 
     <Button
         android:id="@+id/GoToReflections"

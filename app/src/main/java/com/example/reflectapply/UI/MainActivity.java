@@ -26,12 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         Repository repo = new Repository(getApplication());
-        Passage NewPassage = new Passage(1,"Psalm 103","12/2/222");
+        Passage NewPassage = new Passage(1,"Psalm 103","12/2/222","Testing reflection","Testing Application","Testing Prayer","Testing One Word");
         repo.insert(NewPassage);
 
 
-        Reflection newReflection = new Reflection(1,1 ,"Testing reflection","Testing Application","Testing Prayer","Testing One Word");
-        repo.insert(newReflection);
 
         /**Term FallTerm = new Term(1,"Fall Term","09/30/2022","12/15/2022");
         repo.insert(FallTerm);

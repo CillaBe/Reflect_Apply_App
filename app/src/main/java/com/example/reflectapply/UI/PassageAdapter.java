@@ -38,6 +38,10 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
                     intent.putExtra("id",current.getPassageID());
                     intent.putExtra("name",current.getPassageName());
                     intent.putExtra("date",current.getPassageDate());
+                    intent.putExtra ("summary",current.getReflectionSummary());
+                    intent.putExtra("application",current.getReflectionApplication());
+                    intent.putExtra("prayer",current.getReflectionPrayer());
+                    intent.putExtra("word",current.getReflectionWord());
 
 
 
