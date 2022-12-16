@@ -4,19 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".UI.PassagesList"
-    >
-
+    tools:context=".UI.PassagesList">
 
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/termrecyclerview"
-      android:layout_width="344dp"
-      android:layout_height="611dp"
-      android:layout_margin="5dp"
-      android:layout_marginTop="4dp"
+      android:layout_width="321dp"
+      android:layout_height="465dp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 

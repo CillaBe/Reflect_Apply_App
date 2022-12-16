@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.20277777777777778" />
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.4354166666666667" />
         <entry key="app/src/main/res/layout-land/activity_passages_list.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout-land/activity_view_course.xml" value="0.446875" />
@@ -26,6 +27,10 @@
         <entry key="app/src/main/res/layout/course_list_item.xml" value="0.4515625" />
         <entry key="app/src/main/res/layout/passage_list_item.xml" value="0.335" />
         <entry key="app/src/main/res/menu/courselist.xml" value="0.2625" />
+        <entry key="app/src/main/res/menu/menu_assessmentlist.xml" value="0.2921875" />
+        <entry key="app/src/main/res/menu/menu_termlist.xml" value="0.2921875" />
+        <entry key="app/src/main/res/menu/search_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/search_passages.xml" value="0.165" />
       </map>
     </option>
   </component>

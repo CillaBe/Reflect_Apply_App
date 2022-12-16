@@ -12,8 +12,6 @@
         android:layout_width="330dp"
         android:layout_height="0dp"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="76dp"
-        app:layout_constraintBottom_toTopOf="@+id/GoToReflections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,10 +80,10 @@
                 android:layout_weight="1" />
 
             <TextView
-                    android:id="@+id/reflectionSummary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Write a short reflection on this passage:" />
+                android:id="@+id/reflectionSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Write a short reflection on this passage:" />
 
             <EditText
                 android:id="@+id/editReflectionSummary"
@@ -95,6 +93,7 @@
                 android:hint="Enter reflection here"
                 android:minWidth="48dp"
                 android:minHeight="48dp"></EditText>
+
             <TextView
                 android:id="@+id/Application"
                 android:layout_width="match_parent"
@@ -109,6 +108,7 @@
                 android:hint="Enter application here"
                 android:minWidth="48dp"
                 android:minHeight="48dp"></EditText>
+
             <TextView
                 android:id="@+id/Prayer"
                 android:layout_width="match_parent"
@@ -122,6 +122,7 @@
                 android:layout_weight="1"
                 android:hint="Enter prayer here"
                 android:minHeight="48dp"></EditText>
+
             <TextView
                 android:id="@+id/OneWordTakeAway"
                 android:layout_width="match_parent"
@@ -137,48 +138,37 @@
                 android:minHeight="48dp"></EditText>
 
 
-
-
         </LinearLayout>
     </ScrollView>
 
 
     <Button
         android:id="@+id/SaveReflectionButton"
-        android:layout_width="132dp"
-        android:layout_height="54dp"
+        android:layout_width="141dp"
+        android:layout_height="64dp"
 
+        android:layout_marginTop="189dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:onClick="savePassage"
         android:text="Save Reflection"
         app:backgroundTint="@color/AltBlue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <Button
         android:id="@+id/deleteReflectionButton"
-        android:layout_width="126dp"
-        android:layout_height="53dp"
+        android:layout_width="140dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="191dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="8dp"
         android:onClick="DeletePassage"
         android:text="Delete Reflection"
         app:backgroundTint="@color/AltBlue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/SaveReflectionButton" />
-
-    <Button
-        android:id="@+id/GoToReflections"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="76dp"
-        android:onClick="GoToReflections"
-        android:text="Add Today's Reflection"
-        app:backgroundTint="@color/LightPrimaryBlue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/SaveReflectionButton"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

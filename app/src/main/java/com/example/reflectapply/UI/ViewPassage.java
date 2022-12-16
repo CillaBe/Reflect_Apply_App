@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -29,15 +31,24 @@ public class ViewPassage extends AppCompatActivity {
 
     EditText PassageName;
     EditText editPassageDate;
+    EditText EditReflectionSummary;
+    EditText EditReflectionApplication;
+    EditText EditReflectionPrayer;
+    EditText EditReflectionOneWord;
+
+
+
+
+    int passageID;
+    Repository repository;
 
 
     String name;
     String date;
-
-    int passageID;
-    Repository repository;
-    String PassageDate;
-
+    String ReflectionApplication;
+    String ReflectionSummary;
+    String ReflectionPrayer;
+    String ReflectionOneWord;
 
 
 
@@ -64,14 +75,29 @@ public class ViewPassage extends AppCompatActivity {
         repository = new Repository(getApplication());
         editPassageDate = findViewById(R.id.editPassageDate);
         PassageName =findViewById(R.id.editPassageName);
+        EditReflectionSummary = findViewById(R.id.editReflectionSummary);
+        EditReflectionApplication = findViewById(R.id.editApplication);
+        EditReflectionPrayer = findViewById(R.id.editPrayer);
+        EditReflectionOneWord = findViewById(R.id.editOneWordTakeAway);
+
 
         name = getIntent().getStringExtra("name");
         date = getIntent().getStringExtra("date");
+        passageID = getIntent().getIntExtra("idD", -1);
+        ReflectionSummary = getIntent().getStringExtra("summary");
+        ReflectionApplication = getIntent().getStringExtra("application");
+        ReflectionPrayer = getIntent().getStringExtra("prayer");
+        ReflectionOneWord = getIntent().getStringExtra("word");
 
         passageID = getIntent().getIntExtra("id",-1);
 
         PassageName.setText(name);
         editPassageDate.setText(date);
+        EditReflectionSummary.setText(String.valueOf(ReflectionSummary));
+        EditReflectionApplication.setText(ReflectionApplication);
+        EditReflectionSummary.setText(ReflectionSummary);
+        EditReflectionPrayer.setText(ReflectionPrayer);
+        EditReflectionOneWord.setText(ReflectionOneWord);
 
 
 
@@ -131,12 +157,12 @@ public class ViewPassage extends AppCompatActivity {
                     newID = (int)Math.random();
                 }
             }
-            passage = new Passage(newID, PassageName.getText().toString(), editPassageDate.getText().toString());
+            passage = new Passage(newID, PassageName.getText().toString(), editPassageDate.getText().toString(),EditReflectionSummary.getText().toString(), EditReflectionApplication.getText().toString(), EditReflectionPrayer.getText().toString(), EditReflectionOneWord.getText().toString());
             repository.insert(passage);
             Intent newIntent = new Intent(ViewPassage.this, PassagesList.class);
             startActivity(newIntent);
         } else {
-            passage = new Passage(passageID,  PassageName.getText().toString(), editPassageDate.getText().toString());
+            passage = new Passage(passageID,PassageName.getText().toString(), editPassageDate.getText().toString(),EditReflectionSummary.getText().toString(), EditReflectionApplication.getText().toString(), EditReflectionPrayer.getText().toString(), EditReflectionOneWord.getText().toString());
             repository.update(passage);
             Intent newIntent = new Intent(ViewPassage.this, PassagesList.class);
             startActivity(newIntent);
@@ -148,14 +174,7 @@ public class ViewPassage extends AppCompatActivity {
     }
 
     public void DeletePassage(View view) {
-        int numberOfCourses = 0;
-        for (Reflection course : repository.getAllReflections()){
-            if (course.getPassageID() == passageID ){
-                ++numberOfCourses;}
 
-
-        }
-        if(numberOfCourses == 0) {
             for (Passage term : repository.getAllPassages()) {
                 if (term.getPassageID() == passageID) {
                     repository.delete(term);
@@ -165,11 +184,29 @@ public class ViewPassage extends AppCompatActivity {
                 startActivity(intent);
             }
         }
-            else{
-            Toast.makeText(ViewPassage.this, " Error " + name + " has associated courses and cannot be deleted! ", Toast.LENGTH_LONG).show();
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.courselist, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            case R.id.ShareNotes:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, EditReflectionSummary.getText().toString());
+                sendIntent.putExtra(Intent.EXTRA_TITLE, EditReflectionOneWord.getText().toString());
+                sendIntent.setType("text/plain");
+                Intent shareNotes = Intent.createChooser(sendIntent, null);
+                startActivity(shareNotes);
+                return true;
 
-            }
+
         }
+        return super.onOptionsItemSelected(item);
+    }
 
     }
 
