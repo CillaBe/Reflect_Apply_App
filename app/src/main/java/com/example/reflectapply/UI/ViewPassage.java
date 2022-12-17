@@ -21,6 +21,9 @@ import com.example.reflectapply.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -49,6 +52,8 @@ public class ViewPassage extends AppCompatActivity {
     String ReflectionSummary;
     String ReflectionPrayer;
     String ReflectionOneWord;
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
 
 
 
@@ -149,6 +154,7 @@ public class ViewPassage extends AppCompatActivity {
     }
     public void savePassage(View view){
         Passage passage;
+        String formattedNow = now.format(formatter);
         if (passageID == -1) {
             int newID = (int)Math.random();
             List<Passage> allTerms = new ArrayList<>();
@@ -157,12 +163,12 @@ public class ViewPassage extends AppCompatActivity {
                     newID = (int)Math.random();
                 }
             }
-            passage = new Passage(newID, PassageName.getText().toString(), editPassageDate.getText().toString(),EditReflectionSummary.getText().toString(), EditReflectionApplication.getText().toString(), EditReflectionPrayer.getText().toString(), EditReflectionOneWord.getText().toString());
+            passage = new Passage(newID, PassageName.getText().toString(), editPassageDate.getText().toString(),EditReflectionSummary.getText().toString(), EditReflectionApplication.getText().toString(), EditReflectionPrayer.getText().toString(), EditReflectionOneWord.getText().toString(),formattedNow);
             repository.insert(passage);
             Intent newIntent = new Intent(ViewPassage.this, PassagesList.class);
             startActivity(newIntent);
         } else {
-            passage = new Passage(passageID,PassageName.getText().toString(), editPassageDate.getText().toString(),EditReflectionSummary.getText().toString(), EditReflectionApplication.getText().toString(), EditReflectionPrayer.getText().toString(), EditReflectionOneWord.getText().toString());
+            passage = new Passage(passageID,PassageName.getText().toString(), editPassageDate.getText().toString(),EditReflectionSummary.getText().toString(), EditReflectionApplication.getText().toString(), EditReflectionPrayer.getText().toString(), EditReflectionOneWord.getText().toString(),formattedNow);
             repository.update(passage);
             Intent newIntent = new Intent(ViewPassage.this, PassagesList.class);
             startActivity(newIntent);

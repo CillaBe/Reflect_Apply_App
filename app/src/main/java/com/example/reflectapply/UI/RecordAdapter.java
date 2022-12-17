@@ -13,21 +13,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.reflectapply.Database.Repository;
 import com.example.reflectapply.Entity.Passage;
-import com.example.reflectapply.Entity.Reflection;
 import com.example.reflectapply.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageViewHolder> {
-    class PassageViewHolder extends RecyclerView.ViewHolder{
+public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordViewHolder> {
+    class RecordViewHolder extends RecyclerView.ViewHolder{
         private final TextView passageNameItemView;
         private final TextView DateItemView;
 
         private final TextView TimeStampItemView;
         Repository repo;
 
-        private PassageViewHolder(View itemView){
+        private RecordViewHolder(View itemView){
             super (itemView);
             passageNameItemView = itemView.findViewById(R.id.PassageName);
             DateItemView = itemView.findViewById(R.id.PassageDate);
@@ -70,7 +69,7 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
     private final Context context;
     private final LayoutInflater mInflater;
     //addeded mPassges here and this.mPassages
-    public PassageAdapter( List<Passage> mPassages,Context context){
+    public RecordAdapter( List<Passage> mPassages,Context context){
         mInflater = LayoutInflater.from(context);
         this.context =context;
         this.mPassages = mPassages;
@@ -82,8 +81,8 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
         Filter filter = new Filter() {
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-             mPassages = (List<Passage>) results.values;
-             notifyDataSetChanged();
+                mPassages = (List<Passage>) results.values;
+                notifyDataSetChanged();
             }
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
@@ -116,10 +115,10 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
     //end of additions
     @NonNull
     @Override
-    public PassageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecordAdapter.RecordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View itemView=mInflater.inflate(R.layout.passage_list_item,parent,false);
-        return new PassageViewHolder(itemView);
+        View itemView=mInflater.inflate(R.layout.report_list_item,parent,false);
+        return new RecordAdapter.RecordViewHolder(itemView);
 
 
 
@@ -131,16 +130,18 @@ public class PassageAdapter extends RecyclerView.Adapter<PassageAdapter.PassageV
     //end of added for image view
 
     @Override
-    public void onBindViewHolder(@NonNull PassageViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecordAdapter.RecordViewHolder holder, int position) {
         if(mPassages!=null){
             Passage current=mPassages.get(position);
             String name=current.getPassageName();
             String date= current.getPassageDate();
+            String datetime = current.getReflectionEntryDateTime();
 
 
 
             holder.passageNameItemView.setText(name);
             holder.DateItemView.setText(date);
+            holder.TimeStampItemView.setText(datetime);
 
 
         }

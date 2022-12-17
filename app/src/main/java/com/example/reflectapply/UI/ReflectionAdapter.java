@@ -38,6 +38,7 @@ public class ReflectionAdapter extends RecyclerView.Adapter<ReflectionAdapter.Re
                     intent.putExtra("PassageID", current.getPassageID());
 
 
+
                     context.startActivity(intent);
 
 

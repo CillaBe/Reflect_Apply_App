@@ -13,7 +13,7 @@ import com.example.reflectapply.Entity.Assessment;
 import com.example.reflectapply.Entity.Reflection;
 import com.example.reflectapply.Entity.Passage;
 
-@Database(entities={Assessment.class, Passage.class, Reflection.class}, version=9, exportSchema = false)
+@Database(entities={Assessment.class, Passage.class, Reflection.class}, version=11, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {
     public abstract AssessmentDAO assessmentDAO();
     public abstract ReflectionDAO reflectionDAO();

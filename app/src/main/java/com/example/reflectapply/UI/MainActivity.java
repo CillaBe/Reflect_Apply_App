@@ -11,8 +11,14 @@ import com.example.reflectapply.Entity.Passage;
 import com.example.reflectapply.Entity.Reflection;
 import com.example.reflectapply.R;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
 public class MainActivity extends AppCompatActivity {
     public static int numAlert;
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +31,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
 
+
+        String formattedNow = now.format(formatter);
         Repository repo = new Repository(getApplication());
-        Passage NewPassage = new Passage(1,"Psalm 103","12/2/222","Testing reflection","Testing Application","Testing Prayer","Testing One Word");
+        Passage NewPassage = new Passage(1,"Psalm 103","12/2/222","Testing reflection","Testing Application","Testing Prayer","Testing One Word",formattedNow);
         repo.insert(NewPassage);
 
 

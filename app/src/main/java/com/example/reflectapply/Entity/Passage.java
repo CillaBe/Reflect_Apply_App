@@ -3,6 +3,8 @@ package com.example.reflectapply.Entity;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.time.LocalDateTime;
+
 @Entity(tableName = "passageTable")
 public class Passage {
     @PrimaryKey(autoGenerate = true)
@@ -13,6 +15,12 @@ public class Passage {
     private String ReflectionApplication;
     private String ReflectionPrayer;
     private String ReflectionWord;
+    private String ReflectionEntryDateTime;
+    //added for new view
+    public static int recordtype= 1;
+    public static int listtype =0;
+
+
 
     public String getReflectionWord() {
         return ReflectionWord;
@@ -56,18 +64,6 @@ public class Passage {
 
     private String PassageDate;
 
-
-    public Passage(int PassageID, String PassageName, String PassageDate, String ReflectionSummary, String ReflectionApplication, String ReflectionPrayer,String ReflectionWord) {
-        this.PassageID = PassageID;
-        this.PassageName = PassageName;
-        this.PassageDate = PassageDate;
-        this.ReflectionSummary = ReflectionSummary;
-        this.ReflectionApplication = ReflectionApplication;
-        this.ReflectionPrayer = ReflectionPrayer;
-        this.ReflectionWord = ReflectionWord;
-
-    }
-
     @Override
     public String toString() {
         return "Passage{" +
@@ -77,8 +73,29 @@ public class Passage {
                 ", ReflectionApplication='" + ReflectionApplication + '\'' +
                 ", ReflectionPrayer='" + ReflectionPrayer + '\'' +
                 ", ReflectionWord='" + ReflectionWord + '\'' +
+                ", ReflectionEntryDateTime='" + ReflectionEntryDateTime + '\'' +
                 ", PassageDate='" + PassageDate + '\'' +
                 '}';
+    }
+
+    public String getReflectionEntryDateTime() {
+        return ReflectionEntryDateTime;
+    }
+
+    public void setReflectionEntryDateTime(String reflectionEntryDateTime) {
+        ReflectionEntryDateTime = reflectionEntryDateTime;
+    }
+
+    public Passage(int PassageID, String PassageName, String PassageDate, String ReflectionSummary, String ReflectionApplication, String ReflectionPrayer, String ReflectionWord, String ReflectionEntryDateTime) {
+        this.PassageID = PassageID;
+        this.PassageName = PassageName;
+        this.PassageDate = PassageDate;
+        this.ReflectionSummary = ReflectionSummary;
+        this.ReflectionApplication = ReflectionApplication;
+        this.ReflectionPrayer = ReflectionPrayer;
+        this.ReflectionWord = ReflectionWord;
+        this.ReflectionEntryDateTime = ReflectionEntryDateTime;
+
     }
 
     public String getPassageName() {

@@ -12,7 +12,7 @@
         android:layout_height="48dp"
         android:layout_marginBottom="84dp"
         android:text="Passage Report"
-        app:layout_constraintBottom_toTopOf="@+id/termrecyclerview"
+        app:layout_constraintBottom_toTopOf="@+id/reportrecyclerview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,9 +20,9 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/termrecyclerview"
-        android:layout_width="321dp"
-        android:layout_height="465dp"
+        android:id="@+id/reportrecyclerview"
+        android:layout_width="380dp"
+        android:layout_height="479dp"
         android:layout_marginTop="132dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

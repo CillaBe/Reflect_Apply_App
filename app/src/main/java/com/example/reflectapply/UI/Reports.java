@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Reports extends AppCompatActivity {
 
-    PassageAdapter adapter;
+    RecordAdapter adapter;
     private SearchView mySearchView;
     private SearchManager mySearchManager;
 
@@ -28,11 +28,11 @@ public class Reports extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reports);
 
-        RecyclerView recyclerView=findViewById(R.id.termrecyclerview);
+        RecyclerView recyclerView=findViewById(R.id.reportrecyclerview);
         Repository repository = new Repository(getApplication());
 
         List<Passage> passages= repository.getAllPassages();
-        adapter = new PassageAdapter(passages,this);
+        adapter = new RecordAdapter(passages,this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter.setPassages(passages);
