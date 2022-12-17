@@ -91,4 +91,8 @@ public class PassagesList extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToReports(View view) {
+        Intent intent = new Intent(PassagesList.this, Reports.class);
+        startActivity(intent);
+    }
 }

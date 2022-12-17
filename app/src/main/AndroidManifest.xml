@@ -15,9 +15,9 @@
             android:exported="true"></receiver>
 
         <activity
-            android:name="com.example.reflectapply.UI.AddCourse"
+            android:name="com.example.reflectapply.UI.Reports"
             android:exported="false"
-            android:label="Add Course" />
+            android:label="Generate Report by Passage" />
         <activity
             android:name="com.example.reflectapply.UI.AddAssessment"
             android:exported="false"
