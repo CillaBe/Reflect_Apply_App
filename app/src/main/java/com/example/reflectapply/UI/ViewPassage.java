@@ -149,7 +149,7 @@ public class ViewPassage extends AppCompatActivity {
 
 
     }
-    private void updateLabelStart() {
+    public void updateLabelStart() {
         editPassageDate.setText(SimpleFormat.format(myCalenderBegin.getTime()));
     }
     public void savePassage(View view){

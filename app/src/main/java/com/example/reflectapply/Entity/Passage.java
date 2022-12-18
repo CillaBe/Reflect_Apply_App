@@ -98,6 +98,10 @@ public class Passage {
 
     }
 
+    public Passage() {
+
+    }
+
     public String getPassageName() {
         return PassageName;
     }
