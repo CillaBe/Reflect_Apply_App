@@ -9,11 +9,11 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="378dp"
-        android:layout_height="714dp"
+        android:layout_width="826dp"
+        android:layout_height="857dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -159,10 +159,10 @@
                     android:text="Save Reflection"
                     app:backgroundTint="@color/AltBlue" />
 
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
 
                 <Button
                     android:id="@+id/deleteReflectionButton"

@@ -17,7 +17,8 @@
         <activity
             android:name="com.example.reflectapply.UI.Reports"
             android:exported="false"
-            android:label="Generate Report by Passage" />
+            android:label="Generate Report by Passage"
+            android:parentActivityName="com.example.reflectapply.UI.PassagesList"/>
         <activity
             android:name="com.example.reflectapply.UI.AddAssessment"
             android:exported="false"
@@ -53,7 +54,7 @@
         <activity
             android:name="com.example.reflectapply.UI.PassagesList"
             android:exported="false"
-            android:label="Search Past Passages"
+            android:label="Search Past Entries"
             android:parentActivityName="com.example.reflectapply.UI.MainActivity" />
         <activity
             android:name="com.example.reflectapply.UI.MainActivity"

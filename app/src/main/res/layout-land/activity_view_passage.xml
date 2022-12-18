@@ -7,12 +7,12 @@
     tools:context=".UI.ViewPassage">
 
     <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="374dp"
-        android:layout_height="166dp"
+        android:id="@+id/scrollView3"
+        android:layout_width="664dp"
+        android:layout_height="327dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Term Name"
+                android:text="Today's Passage"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <EditText
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:hint="Fall 2020"
+                android:hint="Psalm 103"
                 android:minHeight="48dp"
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="235dp"
@@ -61,7 +61,7 @@
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Start"
+                android:text="Today's Date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -73,84 +73,113 @@
                 android:hint="09/01/2022"
                 android:minHeight="48dp"></EditText>
 
-            <TextView
-                android:id="@+id/textView9"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="End" />
-
-            <EditText
-                android:id="@+id/editTermEnd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="12/01/2022"
-                android:minHeight="48dp"></EditText>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
+                android:layout_height="35dp"
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/reflectionSummary"
                 android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:text="Courses" />
+                android:layout_height="wrap_content"
+                android:text="Write a short reflection on this passage:" />
+
+            <EditText
+                android:id="@+id/editReflectionSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter reflection here"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/Application"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How will you apply this in your daily life?" />
+
+            <EditText
+                android:id="@+id/editApplication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter application here"
+                android:minWidth="48dp"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/Prayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is your prayer for today?" />
+
+            <EditText
+                android:id="@+id/editPrayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter prayer here"
+                android:minHeight="48dp"></EditText>
+
+            <TextView
+                android:id="@+id/OneWordTakeAway"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What's your one word take away?" />
+
+            <EditText
+                android:id="@+id/editOneWordTakeAway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter one word takaway here"
+                android:minHeight="48dp"></EditText>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <Button
+                    android:id="@+id/SaveReflectionButton"
+                    android:layout_width="141dp"
+                    android:layout_height="64dp"
+
+                    android:onClick="savePassage"
+                    android:text="Save Reflection"
+                    app:backgroundTint="@color/AltBlue" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/deleteReflectionButton"
+                    android:layout_width="140dp"
+                    android:layout_height="63dp"
+                    android:onClick="DeletePassage"
+                    android:text="Delete Reflection"
+                    app:backgroundTint="@color/AltBlue" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
 
         </LinearLayout>
     </ScrollView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="382dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:scrollbars="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
-
-    <Button
-        android:id="@+id/addCourseButton"
-        android:layout_width="120dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_weight="1"
-        android:onClick="goToCourseDetails"
-        android:text="Add Course"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <Button
-        android:id="@+id/SaveReflectionButton"
-        android:layout_width="117dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="27dp"
-
-        android:layout_marginEnd="16dp"
-        android:onClick="saveReflection"
-        android:text="Save Term"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/deleteReflectionButton"
-        android:layout_width="106dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="24dp"
-        android:text="Delete Term"
-        android:onClick="DeletePassage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/SaveReflectionButton"
-        app:layout_constraintStart_toEndOf="@+id/addCourseButton"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.084" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
