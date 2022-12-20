@@ -2,16 +2,16 @@
     <!-- Base application theme. -->
     <style name="Theme.WGUSchedulingApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primaryBlue</item>
-        <item name="colorPrimaryVariant">@color/LightPrimaryBlue</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <item name="android:textColorPrimary">@color/black</item>
-        <item name="android:textColorSecondary">@color/black</item>
-        <item name="android:textColorTertiary">@color/black</item>
+        <item name="colorPrimary">@color/shadeRed3</item>
+        <item name="colorPrimaryVariant">@color/Red2</item>
+        <item name="colorOnPrimary">@color/tintRed8</item>
+        <item name="android:textColorPrimary">@color/tintRed8</item>
+        <item name="android:textColorSecondary">@color/shadeRed6</item>
+        <item name="android:textColorTertiary">@color/shadeRed6</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/SecondaryBlue</item>
-        <item name="colorSecondaryVariant">@color/SecondaryDarkBlue</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/Red2</item>
+        <item name="colorSecondaryVariant">@color/Red3</item>
+        <item name="colorOnSecondary">@color/tintRed8</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

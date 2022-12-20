@@ -15,4 +15,34 @@
     <color name="SecondaryDarkBlue">#0086c3</color>
     <color name="AltBlue">#b3e5fc</color>
 
-</resources>
+    <color name="Red1">#a45546</color>
+    <color name="Red2">#9f5a4d</color>
+    <color name="Red3">#9b6054</color>
+    <color name="Red4">#96655c</color>
+    <color name="Red5">#926a63</color>
+    <color name="Red6">#8d706a</color>
+    <color name="Red7">#897571</color>
+    <color name="Red8">#847a78</color>
+
+    <color name="complimentBlue">#4695a4</color>
+
+    <color name="shadeRed1">#a45546</color>
+    <color name="shadeRed2">#904a3d</color>
+    <color name="shadeRed3">#7b4035</color>
+    <color name="shadeRed4">#67352c</color>
+    <color name="shadRed5">#522b23</color>
+    <color name="shadeRed6">#3e201a</color>
+    <color name="shadeRed7">#291512</color>
+    <color name="shadeRed8">#150b09</color>
+
+    <color name="tintRed1">#a45546</color>
+    <color name="tintRed2">#af6a5d</color>
+    <color name="tintRed3">#bb8074</color>
+    <color name="tintRed4">#c6958b</color>
+    <color name="tintRed5">#d1aaa3</color>
+    <color name="tintRed6">#ddbfba</color>
+    <color name="tintRed7">#e8d5d1</color>
+    <color name="tintRed8">#f4eae8</color>
+
+
+    </resources>
