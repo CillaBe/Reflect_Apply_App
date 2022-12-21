@@ -6,17 +6,17 @@
         <entry key="../../../../../layout/custom_preview.xml" value="0.4310998735777497" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.20277777777777778" />
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.4354166666666667" />
-        <entry key="app/src/main/res/layout-land/activity_passages_list.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout-land/activity_reports.xml" value="0.5182291666666666" />
+        <entry key="app/src/main/res/layout-land/activity_passages_list.xml" value="0.335" />
+        <entry key="app/src/main/res/layout-land/activity_reports.xml" value="0.335" />
         <entry key="app/src/main/res/layout-land/activity_view_course.xml" value="0.446875" />
-        <entry key="app/src/main/res/layout-land/activity_view_passage.xml" value="0.335" />
+        <entry key="app/src/main/res/layout-land/activity_view_passage.xml" value="0.375" />
         <entry key="app/src/main/res/layout-land/assessment_list_item.xml" value="0.446875" />
         <entry key="app/src/main/res/layout-land/passage_list_item.xml" value="0.446875" />
         <entry key="app/src/main/res/layout-land/report_list_item.xml" value="0.5265625" />
         <entry key="app/src/main/res/layout-sw600dp/activity_main.xml" value="0.338671875" />
         <entry key="app/src/main/res/layout-sw600dp/activity_passages_list.xml" value="0.338671875" />
-        <entry key="app/src/main/res/layout-sw600dp/activity_reports.xml" value="0.338671875" />
-        <entry key="app/src/main/res/layout-sw600dp/activity_view_passage.xml" value="0.625" />
+        <entry key="app/src/main/res/layout-sw600dp/activity_reports.xml" value="0.335" />
+        <entry key="app/src/main/res/layout-sw600dp/activity_view_passage.xml" value="0.55" />
         <entry key="app/src/main/res/layout-sw600dp/passage_list_item.xml" value="0.338671875" />
         <entry key="app/src/main/res/layout-sw600dp/report_list_item.xml" value="0.338671875" />
         <entry key="app/src/main/res/layout/activity_add_assessment.xml" value="0.4515625" />
@@ -25,7 +25,7 @@
         <entry key="app/src/main/res/layout/activity_assessments_list.xml" value="0.4515625" />
         <entry key="app/src/main/res/layout/activity_course_list.xml" value="0.4515625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.48175182481751827" />
-        <entry key="app/src/main/res/layout/activity_passages_list.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_passages_list.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_reports.xml" value="0.3900462962962963" />
         <entry key="app/src/main/res/layout/activity_view_assessment.xml" value="0.4515625" />
         <entry key="app/src/main/res/layout/activity_view_course.xml" value="0.4515625" />

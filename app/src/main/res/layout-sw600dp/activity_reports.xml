@@ -6,26 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".UI.Reports">
 
-    <TextView
-        android:id="@+id/ReportTitle"
-        android:layout_width="153dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="14dp"
-        android:text="Passage Report"
-        app:layout_constraintBottom_toTopOf="@+id/reportrecyclerview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reportrecyclerview"
-        android:layout_width="605dp"
-        android:layout_height="497dp"
-        android:layout_marginTop="68dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="847dp"
+        android:layout_height="1443dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reportrecyclerview"
+            android:layout_width="830dp"
+            android:layout_height="1398dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="211dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/ReportTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="Passage Report"
+            android:textSize="30dp"
+            app:fontFamily="@font/bellefair" />
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

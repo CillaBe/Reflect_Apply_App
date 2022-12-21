@@ -6,70 +6,99 @@
     android:layout_height="wrap_content"
     tools:context=".UI.PassagesList">
 
-  <TextView
-      android:id="@+id/textView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="4dp"
-      android:text="Past Entries"
-      android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-      app:fontFamily="@font/bellefair"
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardView"
+      android:layout_width="644dp"
+      android:layout_height="136dp"
+      android:layout_marginTop="12dp"
+      app:cardBackgroundColor="@color/white"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.061"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintTop_toBottomOf="@id/PastEntriesCardView">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/termrecyclerview"
+        android:layout_width="606dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="16dp" />
+  </androidx.cardview.widget.CardView>
 
-  <Button
-      android:id="@+id/AddNewReflection"
-      android:layout_width="162dp"
-      android:layout_height="63dp"
-      android:layout_margin="20dp"
-      android:layout_marginTop="53dp"
-      android:layout_marginBottom="4dp"
-      android:clickable="true"
-      android:minWidth="48dp"
-      android:minHeight="48dp"
-      android:onClick="goToReflectionDetail"
-      android:text="New Reflection"
-      app:backgroundTint="@color/AltBlue"
-      app:fontFamily="@font/alegreya_sans_sc"
-      app:layout_constraintBottom_toBottomOf="parent"
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardView2"
+      android:layout_width="190dp"
+      android:layout_height="96dp"
 
-
-      app:layout_constraintEnd_toStartOf="@+id/viewReports"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/termrecyclerview"
-      app:layout_constraintVertical_bias="1.0"
-      app:srcCompat="?attr/actionModeCloseDrawable"
-      tools:ignore="SpeakableTextPresentCheck" />
-
-  <Button
-      android:id="@+id/viewReports"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="20dp"
+      android:layout_marginStart="16dp"
       android:layout_marginTop="27dp"
-      android:layout_marginBottom="28dp"
-      android:onClick="goToReports"
-      android:text="Reports"
-      app:backgroundTint="@color/LightPrimaryBlue"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toEndOf="@id/AddNewReflection"
-      app:layout_constraintTop_toBottomOf="@+id/termrecyclerview"
-      app:layout_constraintVertical_bias="0.0" />
-
-  <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/termrecyclerview"
-      android:layout_width="667dp"
-      android:layout_height="149dp"
-      android:layout_margin="5dp"
-      android:layout_marginTop="14dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.048"
-      app:layout_constraintLeft_toLeftOf="parent"
+      app:cardBackgroundColor="@color/white"
+      app:cardPreventCornerOverlap="false"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textView" />
+      app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+    <Button
+        android:id="@+id/AddNewReflection"
+        android:layout_width="152dp"
+        android:layout_height="63dp"
+        android:layout_margin="20dp"
+        android:clickable="true"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="goToReflectionDetail"
+        android:text="New Reflection"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/Red1"
+        app:fontFamily="@font/alegreya_sans_sc_bold"
+        app:icon="@drawable/ic_baseline_add_circle_24"
+
+
+        app:iconTint="#F1EBEB"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:ignore="SpeakableTextPresentCheck" />
+  </androidx.cardview.widget.CardView>
+
+  <androidx.cardview.widget.CardView
+      android:layout_width="177dp"
+      android:layout_height="93dp"
+      android:layout_marginTop="28dp"
+      app:cardBackgroundColor="@color/white"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.093"
+      app:layout_constraintStart_toEndOf="@+id/cardView2"
+      app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+    <Button
+        android:id="@+id/viewReports"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_margin="20dp"
+        android:onClick="goToReports"
+        android:text="Reports"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/Red1"
+        app:icon="@drawable/ic_baseline_launch_24"
+        app:iconTint="#F8F3F3" />
+  </androidx.cardview.widget.CardView>
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/PastEntriesCardView"
+      android:layout_width="166dp"
+      android:layout_height="55dp"
+      android:layout_marginBottom="8dp"
+      app:layout_constraintBottom_toTopOf="@+id/cardView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.05"
+      app:layout_constraintStart_toStartOf="parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Past Entries"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:fontFamily="@font/bellefair" />
+  </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
