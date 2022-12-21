@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".UI.ViewReflection">
 
 
     <ScrollView
         android:id="@+id/scrollViewReflection"
-        android:layout_width="402dp"
-        android:layout_height="582dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="387dp"
+        android:layout_height="816dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -43,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="3"
+                android:hint="Enter reflection here"
                 android:minWidth="48dp"
                 android:minHeight="48dp"></EditText>
 
@@ -105,27 +106,45 @@
                 android:hint="585-455-3884"
                 android:minHeight="48dp"></EditText>
 
-            <Button
-                android:id="@+id/SaveReflectionButton"
-                android:layout_width="138dp"
-                android:layout_height="0dp"
-                android:onClick="saveReflection"
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_weight="1" />
 
-                android:text="Save Reflection"
-                app:backgroundTint="@color/AltBlue" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="153dp"
+                android:layout_height="56dp">
 
-            <Button
-                android:id="@+id/deleteReflectionButton"
-                android:layout_width="156dp"
-                android:layout_height="77dp"
-                android:layout_marginEnd="36dp"
-                android:onClick="DeleteReflection"
+                <Button
+                    android:id="@+id/SaveReflectionButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="saveReflection"
+                    android:text="Save Reflection"
+                    app:backgroundTint="@color/Red1"
+                    app:layout_constraintEnd_toStartOf="@id/deleteReflectionButton" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/deleteReflectionButton"
+                    android:layout_width="159dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="36dp"
+                    android:onClick="DeleteReflection"
+
+                    android:text="Delete Reflection"
 
 
-                android:text="Delete Reflection"
-                app:backgroundTint="@color/shadeRed1"
+                    app:backgroundTint="@color/Red1"
+                    app:layout_constraintStart_toEndOf="@id/SaveReflectionButton"
 
-                />
+                    />
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>

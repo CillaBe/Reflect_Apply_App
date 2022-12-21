@@ -77,6 +77,8 @@ public class ViewPassage extends AppCompatActivity {
 
 
 
+
+
         repository = new Repository(getApplication());
         editPassageDate = findViewById(R.id.editPassageDate);
         PassageName =findViewById(R.id.editPassageName);
